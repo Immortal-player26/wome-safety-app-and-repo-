@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SURAKSHA ALERT – Women's Personal Safety Platform</title>
+  <meta name="description" content="Your Safety. Your Strength. Your Freedom. Complete proactive safety readiness and emergency escalation platform for women.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23E84C68'><path d='M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z'/></svg>">
+</head>
+<body>
+
+  <!-- Top Application Header -->
+  <header class="app-header">
+    <div class="nav-container">
+      <a class="brand-wrapper" onclick="navigate('landing')">
+        <div class="brand-icon-shield">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M12 8v4"/>
+            <path d="M12 16h.01"/>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <span class="brand-title">SURAKSHA ALERT</span>
+          <span class="brand-tagline">Your Safety • Your Strength • Your Freedom</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><button class="nav-item-btn active" data-page="landing" onclick="navigate('landing')">Home</button></li>
+          <li><button class="nav-item-btn" data-page="dashboard" onclick="navigate('dashboard')">Dashboard</button></li>
+          <li><button class="nav-item-btn" data-page="readiness" onclick="navigate('readiness')">Readiness Score <span class="badge badge-coral" id="navScoreBadge">90%</span></button></li>
+          <li><button class="nav-item-btn" data-page="journey" onclick="navigate('journey')">Smart Journey</button></li>
+          <li><button class="nav-item-btn" data-page="escalation" onclick="navigate('escalation')">Escalation Flow</button></li>
+          <li><button class="nav-item-btn" data-page="contacts" onclick="navigate('contacts')">Contacts</button></li>
+          <li><button class="nav-item-btn" data-page="shield" onclick="navigate('shield')">Active Shield</button></li>
+          <li><button class="nav-item-btn" data-page="emergency" onclick="navigate('emergency')">Emergency 112</button></li>
+          <li><button class="nav-item-btn" data-page="history" onclick="navigate('history')">Activity</button></li>
+          <li><button class="nav-item-btn" data-page="innovation" onclick="navigate('innovation')">Innovation</button></li>
+        </ul>
+      </nav>
+
+      <!-- Quick Action SOS Badge -->
+      <div class="nav-actions">
+        <button class="sos-nav-badge" onclick="triggerSosCountdown()" title="Activate Emergency SOS (Demo Mode)">
+          <span class="sos-pulse-dot"></span>
+          <span>SOS ALERT</span>
+        </button>
+        <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle Navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileDrawer" style="display:none; background: var(--color-warm-white); border-bottom: 2px solid var(--color-rose-pink); padding: 1rem 1.5rem;">
+    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+      <button class="nav-item-btn" onclick="navigate('landing'); toggleMobileNav();">Home</button>
+      <button class="nav-item-btn" onclick="navigate('dashboard'); toggleMobileNav();">Dashboard</button>
+      <button class="nav-item-btn" onclick="navigate('readiness'); toggleMobileNav();">Safety Readiness Score</button>
+      <button class="nav-item-btn" onclick="navigate('journey'); toggleMobileNav();">Smart Journey Protection</button>
+      <button class="nav-item-btn" onclick="navigate('escalation'); toggleMobileNav();">Smart Escalation Demo</button>
+      <button class="nav-item-btn" onclick="navigate('contacts'); toggleMobileNav();">Trusted Contacts</button>
+      <button class="nav-item-btn" onclick="navigate('shield'); toggleMobileNav();">Active Shield</button>
+      <button class="nav-item-btn" onclick="navigate('emergency'); toggleMobileNav();">Emergency Services</button>
+      <button class="nav-item-btn" onclick="navigate('history'); toggleMobileNav();">Activity History</button>
+      <button class="nav-item-btn" onclick="navigate('innovation'); toggleMobileNav();">Innovation & Differentiation</button>
+    </div>
+  </div>
+
+  <!-- Main Application Body -->
+  <main class="main-wrapper">
+
+    <!-- ==========================================================================
+         PAGE 1: LANDING PAGE
+         ========================================================================== -->
+    <section id="section-landing" class="app-section active">
+      <div class="hero-section">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="hero-pill-indicator"></span>
+            <span>HACKATHON ROUND 1 PROTOTYPE • ANDROID PREVIEW</span>
+          </div>
+          <h1 class="hero-heading">
+            Walk Freely. Stay Prepared. <br>
+            <span class="gradient-text">Feel Safe Every Step.</span>
+          </h1>
+          <p class="hero-subtitle">
+            <strong>SURAKSHA ALERT</strong> transforms women's personal safety from a panicked reaction into proactive preparation, intelligent journey tracking, and guaranteed acknowledgement-based emergency escalation.
+          </p>
+
+          <div class="hero-cta-group">
+            <button class="btn btn-primary btn-lg" onclick="navigate('dashboard')">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+              Open Live Dashboard
+            </button>
+            <button class="btn btn-secondary btn-lg" onclick="navigate('readiness')">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              Safety Readiness Score
+            </button>
+            <button class="btn btn-plum" onclick="startJudgeTour()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              2-Min Judge Demo Tour
+            </button>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="hero-stat-card">
+              <span class="hero-stat-num">90%</span>
+              <span class="hero-stat-label">Dynamic Safety Readiness</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="hero-stat-num">3-Tier</span>
+              <span class="hero-stat-label">Smart Escalation Chain</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="hero-stat-num">100%</span>
+              <span class="hero-stat-label">Interactive Prototype</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="hero-visual-wrapper">
+          <div class="hero-image-frame">
+            <img class="hero-img" 
+                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" 
+                 alt="Confident woman walking independently in city" 
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80';">
+          </div>
+
+          <!-- Floating Interactive Badges -->
+          <div class="hero-floating-card floating-score" onclick="navigate('readiness')" style="cursor: pointer;">
+            <div style="background: var(--color-success-bg); color: var(--color-success); width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div>
+              <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-deep-plum);">Readiness: Ready</div>
+              <div style="font-size: 0.75rem; color: var(--color-deep-plum-subtle);">All 5 Safety Protocols Met</div>
+            </div>
+          </div>
+
+          <div class="hero-floating-card floating-sos" onclick="triggerSosCountdown()" style="cursor: pointer;">
+            <div style="background: var(--color-coral-red-light); color: var(--color-coral-red); width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-coral-red);">Smart SOS Active</div>
+              <div style="font-size: 0.75rem; color: var(--color-deep-plum-subtle);">Tap to simulate emergency</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Highlights -->
+      <div class="section-header" style="text-align: center; margin-top: 3rem;">
+        <span class="section-eyebrow">Key Capabilities</span>
+        <h2 class="section-title">A Unified Prevention & Response Platform</h2>
+        <p class="section-desc" style="margin: 0 auto;">Beyond simple SOS panic buttons: Suraksha Alert combines pre-journey readiness assessment, automated check-ins, and multi-tier contact escalation.</p>
+      </div>
+
+      <div class="features-preview-grid">
+        <!-- Feature 1 -->
+        <div class="feature-preview-card" onclick="navigate('readiness')" style="cursor:pointer;">
+          <div class="feature-icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem;">Safety Readiness Score</h3>
+          <p>Our core innovation. Checks contacts, GPS calibration, timers and emergency profiles before travel, rating safety on a dynamic 0–100 scale.</p>
+          <span style="font-weight: 700; color: var(--color-coral-red); font-size: 0.85rem; margin-top: auto;">Explore Score →</span>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-preview-card" onclick="navigate('journey')" style="cursor:pointer;">
+          <div class="feature-icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem;">Smart Journey Protection</h3>
+          <p>Enter your destination and arrival estimate. Periodic check-in checkpoints ensure your trusted circle is notified automatically if you are delayed.</p>
+          <span style="font-weight: 700; color: var(--color-coral-red); font-size: 0.85rem; margin-top: auto;">Start Journey →</span>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-preview-card" onclick="navigate('escalation')" style="cursor:pointer;">
+          <div class="feature-icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem;">Acknowledgement Escalation</h3>
+          <p>Traditional SOS causes duplicate panic. Suraksha Alert routes to Contact 1, waits for an acknowledgement, and escalates to Contact 2 & 3 only if unanswered.</p>
+          <span style="font-weight: 700; color: var(--color-coral-red); font-size: 0.85rem; margin-top: auto;">Test Escalation Flow →</span>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-preview-card" onclick="navigate('shield')" style="cursor:pointer;">
+          <div class="feature-icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="23"></line>
+              <line x1="8" y1="23" x2="16" y2="23"></line>
+            </svg>
+          </div>
+          <h3 style="font-size: 1.2rem;">Active Shield & Fake Call</h3>
+          <p>Discreet emergency triggers including Voice Keyword SOS ("SURAKSHA HELP"), Phone Shake detection, and a realistic Fake Call de-escalation tool.</p>
+          <span style="font-weight: 700; color: var(--color-coral-red); font-size: 0.85rem; margin-top: auto;">View Active Shield →</span>
+        </div>
+      </div>
+
+      <!-- Why Suraksha Alert / Market Differentiation Section -->
+      <div class="why-suraksha-section">
+        <div class="why-grid">
+          <div>
+            <span class="section-eyebrow">Innovation & Positioning</span>
+            <h2 class="section-title">Why Traditional Safety Apps Fail When It Matters</h2>
+            <p style="margin-bottom: 1.25rem;">
+              Most emergency apps are purely reactive. When an incident occurs, a victim often has fewer than 5 seconds to unlock their phone, navigate to an app, and tap an SOS button.
+            </p>
+            <div style="background: var(--color-warm-white); border-left: 4px solid var(--color-coral-red); padding: 1.25rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem;">
+              <p style="font-weight: 700; color: var(--color-deep-plum); font-size: 1.05rem; line-height: 1.5;">
+                "Suraksha Alert focuses not only on emergency response, but also on safety preparation before a journey and organised contact escalation when a check-in is missed."
+              </p>
+            </div>
+            <button class="btn btn-primary" onclick="navigate('innovation')">Read Full Market Positioning</button>
+          </div>
+
+          <div class="comparison-box">
+            <h3 style="font-size: 1.15rem; margin-bottom: 1rem; color: var(--color-deep-plum);">Comparison: Traditional vs. Suraksha Alert</h3>
+            
+            <div class="comparison-row">
+              <div class="comparison-icon cross">✕</div>
+              <div>
+                <strong style="color: #9b1c1c; font-size: 0.88rem;">Traditional Apps</strong>
+                <p style="font-size: 0.85rem;">Zero preparation check before you step outside into an unfamiliar route.</p>
+              </div>
+            </div>
+
+            <div class="comparison-row">
+              <div class="comparison-icon check">✓</div>
+              <div>
+                <strong style="color: var(--color-success); font-size: 0.88rem;">Suraksha Alert Readiness Score</strong>
+                <p style="font-size: 0.85rem;">Pre-trip readiness assessment audits contacts, battery, GPS, and sensors beforehand.</p>
+              </div>
+            </div>
+
+            <div class="comparison-row">
+              <div class="comparison-icon cross">✕</div>
+              <div>
+                <strong style="color: #9b1c1c; font-size: 0.88rem;">Traditional Apps</strong>
+                <p style="font-size: 0.85rem;">Blind broadcast SMS to all contacts creates chaotic, uncoordinated responses.</p>
+              </div>
+            </div>
+
+            <div class="comparison-row">
+              <div class="comparison-icon check">✓</div>
+              <div>
+                <strong style="color: var(--color-success); font-size: 0.88rem;">Suraksha Alert Acknowledgement Chain</strong>
+                <p style="font-size: 0.85rem;">Automated acknowledgement escalation guarantees that someone confirms responsibility.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE 2: MAIN DASHBOARD
+         ========================================================================== -->
+    <section id="section-dashboard" class="app-section">
+      <div class="dash-welcome-card">
+        <div>
+          <div class="user-status-pill">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-success);"></span>
+            <span>SYSTEM ACTIVE • GPS CALIBRATED</span>
+          </div>
+          <h1 style="font-size: 1.8rem; margin: 0.5rem 0 0.2rem 0;" id="dashWelcomeName">Hello, Aanya Sen</h1>
+          <p id="dashLocationText">Current Location: Indiranagar 100ft Road, Bengaluru • High Precision</p>
+        </div>
+        <div style="text-align: right;">
+          <button class="btn btn-outline btn-sm" onclick="requestBrowserLocation()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="22" y1="12" x2="18" y2="12"></line>
+              <line x1="6" y1="12" x2="2" y2="12"></line>
+              <line x1="12" y1="6" x2="12" y2="2"></line>
+              <line x1="12" y1="22" x2="12" y2="18"></line>
+            </svg>
+            Sync Real GPS
+          </button>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- Left Column: SOS Hero Trigger & Metrics -->
+        <div>
+          <!-- Master SOS Card -->
+          <div class="sos-trigger-banner">
+            <span class="badge badge-coral" style="margin-bottom: 0.5rem;">INSTANT DEMO ACTIVATION</span>
+            <h2 style="font-size: 1.5rem; color: var(--color-deep-plum);">Emergency Distress Trigger</h2>
+            <p style="max-width: 440px; margin: 0.25rem 0 0.5rem 0; font-size: 0.9rem;">
+              Press the SOS button below to trigger a 5-second countdown with audible siren and simulated escalation dispatch.
+            </p>
+
+            <button class="sos-btn-master" onclick="triggerSosCountdown()" id="masterSosBtn" title="Activate Emergency SOS">
+              <span class="sos-btn-title">SOS</span>
+              <span class="sos-btn-sub">EMERGENCY</span>
+            </button>
+
+            <div style="display: flex; gap: 0.75rem; align-items: center; margin-top: 0.5rem;">
+              <span style="font-size: 0.75rem; color: var(--color-deep-plum-subtle);">Demo Mode: No actual SMS or police line triggered</span>
+              <button class="btn btn-secondary btn-sm" onclick="triggerFakeCallModal()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Test Fake Call
+              </button>
+            </div>
+          </div>
+
+          <!-- Metrics Row -->
+          <div class="dash-metrics-grid">
+            <div class="metric-card" onclick="navigate('readiness')" style="cursor: pointer;">
+              <div class="metric-icon-wrap" style="background: var(--color-soft-lavender); color: var(--color-coral-red);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="metric-value" id="dashMetricScore">90%</div>
+                <div class="metric-label">Safety Readiness Score</div>
+              </div>
+            </div>
+
+            <div class="metric-card" onclick="navigate('contacts')" style="cursor: pointer;">
+              <div class="metric-icon-wrap" style="background: var(--color-soft-purple-light); color: var(--color-deep-plum);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div>
+                <div class="metric-value" id="dashMetricContacts">3 Active</div>
+                <div class="metric-label">Trusted Contacts in Ladder</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions Grid -->
+          <div class="quick-actions-row">
+            <div class="quick-action-btn" onclick="navigate('journey')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+              </svg>
+              <span class="quick-action-label">Smart Journey</span>
+            </div>
+
+            <div class="quick-action-btn" onclick="navigate('escalation')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+              <span class="quick-action-label">Escalation Demo</span>
+            </div>
+
+            <div class="quick-action-btn" onclick="navigate('shield')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+              <span class="quick-action-label">Active Shield</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Journey Status & Recent Activity -->
+        <div>
+          <!-- Smart Journey Snapshot Card -->
+          <div class="card card-lavender" style="margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span class="badge badge-purple">JOURNEY STATUS</span>
+              <button class="btn btn-outline btn-sm" onclick="navigate('journey')">View Details</button>
+            </div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;" id="dashJourneyTitle">Destination: Home (Indiranagar)</h3>
+            <p style="font-size: 0.85rem;" id="dashJourneySubtitle">Automated check-in timer is armed.</p>
+
+            <div style="margin: 1.25rem 0;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 700;">
+                <span>Check-in Progress</span>
+                <span id="dashJourneyProgressPct">35%</span>
+              </div>
+              <div class="journey-progress-bar" style="margin: 0.5rem 0;">
+                <div class="journey-progress-fill" id="dashJourneyProgressFill" style="width: 35%;"></div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem;">
+              <button class="btn btn-primary btn-sm" style="flex: 1;" onclick="handleSafeCheckIn()">
+                ✓ Confirm "I'm Safe"
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="simulateMissedCheckin()">
+                Simulate Delay
+              </button>
+            </div>
+          </div>
+
+          <!-- Activity History Feed -->
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h3 style="font-size: 1.05rem;">Recent Activity</h3>
+              <a href="javascript:void(0)" onclick="navigate('history')" style="font-size: 0.8rem; font-weight: 700; color: var(--color-coral-red);">See All →</a>
+            </div>
+            <div id="dashActivitySnippet" style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE 3: SAFETY READINESS SCORE (MAIN DIFFERENTIATOR)
+         ========================================================================== -->
+    <section id="section-readiness" class="app-section">
+      <div class="section-header">
+        <span class="section-eyebrow">Key Innovation Feature</span>
+        <h2 class="section-title">Safety Readiness Score</h2>
+        <p class="section-desc">
+          Suraksha Alert dynamically measures your safety preparedness before you step outside. It audits contacts, device permissions, GPS accuracy, and journey timers to give you a definitive safety score.
+        </p>
+      </div>
+
+      <!-- Hero Gauge & Summary -->
+      <div class="readiness-hero">
+        <div class="gauge-container">
+          <svg class="readiness-gauge-svg" viewBox="0 0 200 200">
+            <defs>
+              <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E84C68" />
+                <stop offset="100%" stop-color="#A88BC4" />
+              </linearGradient>
+            </defs>
+            <circle class="gauge-bg-circle" cx="100" cy="100" r="90"></circle>
+            <circle class="gauge-progress-circle" id="gaugeCircle" cx="100" cy="100" r="90"></circle>
+          </svg>
+          <div class="gauge-center-text">
+            <div class="gauge-percentage" id="gaugeScoreNumber">90%</div>
+            <div class="gauge-status-badge badge badge-success" id="gaugeStatusText">SHIELD READY</div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Safety Preparedness Analysis</h3>
+          <p style="margin-bottom: 1.25rem;">
+            Your readiness score is actively computed from 5 live factors. As you grant permissions, add contacts, or configure journey safety timers, this score adapts dynamically in real time.
+          </p>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-sm" onclick="requestBrowserLocation()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+              Calibrate Browser GPS (+25 pts)
+            </button>
+            <button class="btn btn-secondary btn-sm" onclick="navigate('contacts')">
+              Manage Contacts Ladder (+30 pts)
+            </button>
+            <button class="btn btn-outline btn-sm" onclick="toggleSafetyTimerState()">
+              Toggle Journey Timer (+15 pts)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Readiness Factors Checklist -->
+      <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Readiness Factors & Verification</h3>
+      <div class="checklist-grid" id="readinessChecklistContainer">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE 4: SMART JOURNEY PROTECTION
+         ========================================================================== -->
+    <section id="section-journey" class="app-section">
+      <div class="section-header">
+        <span class="section-eyebrow">Proactive Prevention</span>
+        <h2 class="section-title">Smart Journey Protection</h2>
+        <p class="section-desc">
+          Going for an evening walk, catching an auto, or heading home from work? Start a journey timer with periodic check-ins. If you miss a scheduled check-in, the system automatically triggers contact escalation.
+        </p>
+      </div>
+
+      <div class="journey-container">
+        <!-- Journey Configuration & Controls -->
+        <div class="card">
+          <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Plan Journey Check-in</h3>
+          
+          <div class="form-group">
+            <label class="form-label">Destination Address / Label</label>
+            <input type="text" class="form-input" id="journeyDestInput" value="Home (Indiranagar, Bangalore)">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Estimated Transit Time</label>
+            <select class="form-select" id="journeyDurationSelect">
+              <option value="15">15 Minutes (Short Walk / Cab)</option>
+              <option value="25" selected>25 Minutes (Standard Commute)</option>
+              <option value="45">45 Minutes (Cross-City Transit)</option>
+              <option value="60">60 Minutes (Long Distance)</option>
+            </select>
+          </div>
+
+          <div style="background: var(--color-soft-lavender); padding: 1rem; border-radius: var(--radius-sm); margin: 1.25rem 0;">
+            <div style="font-weight: 700; font-size: 0.88rem; color: var(--color-deep-plum); margin-bottom: 0.35rem;">Check-in Rule</div>
+            <p style="font-size: 0.8rem;">
+              You will be prompted to tap <strong>"I'm Safe"</strong> halfway and upon arrival. If no check-in is received within 2 minutes of the ETA, the acknowledgement escalation pipeline alerts your Priority 1 contact.
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem;">
+            <button class="btn btn-primary" id="btnStartJourney" onclick="startOrRestartJourney()">
+              Start Smart Journey
+            </button>
+            <button class="btn btn-outline" onclick="cancelJourney()">
+              Reset / End
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Active Journey Display -->
+        <div class="journey-active-banner">
+          <span class="badge badge-coral" id="journeyStatusBadge">JOURNEY IN PROGRESS</span>
+          <div class="journey-timer-display" id="journeyCountdownDisplay">24:59</div>
+          <p id="journeyRemainingLabel" style="font-size: 0.9rem; font-weight: 600; color: var(--color-deep-plum);">Remaining until next safe checkpoint</p>
+
+          <div class="journey-progress-bar">
+            <div class="journey-progress-fill" id="journeyBarFill" style="width: 35%;"></div>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; justify-content: center; margin-top: 1.25rem;">
+            <button class="btn btn-primary" onclick="handleSafeCheckIn()">
+              ✓ Confirm "I'm Safe"
+            </button>
+            <button class="btn btn-secondary" onclick="extendJourneyTime(10)">
+              +10 Mins
+            </button>
+            <button class="btn btn-plum" onclick="simulateMissedCheckin()" title="Demonstrate what happens if user does not check in">
+              ⚠️ Simulate Missed Check-in
+            </button>
+          </div>
+
+          <!-- Journey Route Visual -->
+          <div class="journey-route-visual">
+            <div class="route-step">
+              <div class="route-dot start"></div>
+              <div style="text-align: left; font-size: 0.85rem;">
+                <strong>Origin:</strong> Indiranagar Metro Station (Departed 02:45 PM)
+              </div>
+            </div>
+            <div class="route-step">
+              <div class="route-dot active"></div>
+              <div style="text-align: left; font-size: 0.85rem;">
+                <strong>Checkpoint 1:</strong> 100ft Road Junction (Live Check-in)
+              </div>
+            </div>
+            <div class="route-step">
+              <div class="route-dot end"></div>
+              <div style="text-align: left; font-size: 0.85rem;">
+                <strong>Destination:</strong> Home (Indiranagar)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE 5: SMART EMERGENCY ESCALATION (JUDGE DEMO)
+         ========================================================================== -->
+    <section id="section-escalation" class="app-section">
+      <div class="section-header">
+        <span class="section-eyebrow">Judge Demonstration Feature</span>
+        <h2 class="section-title">Smart Emergency Escalation Flow</h2>
+        <p class="section-desc">
+          When an SOS is activated or a journey check-in is missed, Suraksha Alert prevents duplicate panic by contacting the highest-priority guardian first, waiting for explicit acknowledgement before escalating.
+        </p>
+      </div>
+
+      <!-- Visual Escalation Track -->
+      <div class="escalation-board">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="font-size: 1.2rem;">Multi-Tiered Escalation Ladder</h3>
+          <span class="badge badge-coral" id="escalationStatusBadge">FLOW DEMO READY</span>
+        </div>
+
+        <div class="escalation-flow-track">
+          <div class="track-progress" id="trackProgressLine"></div>
+
+          <!-- Node 1: SOS Trigger -->
+          <div class="escalation-node active" id="node-0">
+            <div class="node-circle">1</div>
+            <div class="node-title">SOS Triggered</div>
+            <div class="node-subtitle">Manual / Missed Timer</div>
+          </div>
+
+          <!-- Node 2: Contact 1 -->
+          <div class="escalation-node" id="node-1">
+            <div class="node-circle">2</div>
+            <div class="node-title">Priya Sharma</div>
+            <div class="node-subtitle">Priority 1 (Sister)</div>
+          </div>
+
+          <!-- Node 3: Contact 2 -->
+          <div class="escalation-node" id="node-2">
+            <div class="node-circle">3</div>
+            <div class="node-title">Rajesh Verma</div>
+            <div class="node-subtitle">Priority 2 (Father)</div>
+          </div>
+
+          <!-- Node 4: Contact 3 -->
+          <div class="escalation-node" id="node-3">
+            <div class="node-circle">4</div>
+            <div class="node-title">Ananya Patel</div>
+            <div class="node-subtitle">Priority 3 (Friend)</div>
+          </div>
+
+          <!-- Node 5: National 112 -->
+          <div class="escalation-node" id="node-4">
+            <div class="node-circle">5</div>
+            <div class="node-title">Emergency 112</div>
+            <div class="node-subtitle">Final Escalation</div>
+          </div>
+        </div>
+
+        <!-- Interactive Judge Control Console -->
+        <div class="escalation-console">
+          <div class="console-header">
+            <div>
+              <strong style="color: var(--color-deep-plum);">Judge Simulation Controls</strong>
+              <div style="font-size: 0.8rem; color: var(--color-deep-plum-subtle);">
+                Simulate different emergency outcomes to demonstrate app resilience.
+              </div>
+            </div>
+            <div id="escalationTimerBadge" class="badge badge-warning" style="display:none;">
+              Auto-Escalate in: 15s
+            </div>
+          </div>
+
+          <div class="judge-controls-row">
+            <button class="btn btn-primary btn-sm" onclick="triggerEscalationStep(1)">
+              Step 1: Alert Priority 1 Contact
+            </button>
+            <button class="btn btn-secondary btn-sm" onclick="simulateContactAcknowledged()">
+              ✓ Simulate Contact Acknowledged
+            </button>
+            <button class="btn btn-plum btn-sm" onclick="simulateNoResponseEscalate()">
+              ⚠️ Simulate No Response (Force Escalate)
+            </button>
+            <button class="btn btn-outline btn-sm" onclick="resetEscalationDemo()">
+              Reset Demo
+            </button>
+          </div>
+
+          <!-- Live Simulated SMS Dispatch Payload -->
+          <div class="sms-dispatch-preview" id="smsDispatchCard">
+            <div class="phone-badge-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem;">
+                <strong style="font-size: 0.85rem; color: var(--color-coral-red);" id="smsRecipientTitle">Simulated Dispatch Queue: Idle</strong>
+                <span style="font-size: 0.75rem; color: var(--color-deep-plum-subtle);" id="smsTimestamp">Ready</span>
+              </div>
+              <p style="font-size: 0.85rem; font-family: monospace; color: var(--color-deep-plum);" id="smsBodyPreview">
+                "SURAKSHA ALERT: Test mode. Click 'Step 1' above to preview the automated emergency dispatch packet sent to trusted guardians."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE 6: TRUSTED CONTACTS
+         ========================================================================== -->
+    <section id="section-contacts" class="app-section">
+      <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="section-eyebrow">Guardian Network</span>
+          <h2 class="section-title">Trusted Contacts</h2>
+          <p class="section-desc">Manage your tiered emergency response network. Contacts are contacted strictly in priority order during an emergency.</p>
+        </div>
+        <button class="btn btn-primary" onclick="openAddContactModal()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add New Contact
+        </button>
+      </div>
+
+      <div class="contacts-grid" id="contactsGridContainer">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE 7: ACTIVE SHIELD
+         ========================================================================== -->
+    <section id="section-shield" class="app-section">
+      <div class="section-header">
+        <span class="section-eyebrow">Discreet Protection</span>
+        <h2 class="section-title">Active Shield Controls</h2>
+        <p class="section-desc">
+          Discreet and hands-free emergency triggers for situations where unlocking a phone is impossible or dangerous.
+        </p>
+      </div>
+
+      <div class="shield-grid">
+        <!-- Voice Keyword SOS -->
+        <div class="shield-card">
+          <div>
+            <div class="shield-card-header">
+              <div class="shield-icon-frame">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                </svg>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggleVoiceSos" checked onchange="toggleShieldFeature('voiceKeywordEnabled')">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <h3 style="font-size: 1.15rem; margin: 1rem 0 0.35rem 0;">Voice Keyword SOS</h3>
+            <p style="font-size: 0.88rem;">
+              Triggers hands-free SOS when the phrase <strong>"SURAKSHA HELP"</strong> is detected even while the phone is in your pocket or bag.
+            </p>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="testVoiceKeyword()">
+            Test Voice Keyword
+          </button>
+        </div>
+
+        <!-- Shake SOS -->
+        <div class="shield-card">
+          <div>
+            <div class="shield-card-header">
+              <div class="shield-icon-frame">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 2.1l4 4-4 4"/>
+                  <path d="M3 12.6l4-4 4 4"/>
+                  <rect x="7" y="6" width="10" height="14" rx="2"/>
+                </svg>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggleShakeSos" checked onchange="toggleShieldFeature('shakeSosEnabled')">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <h3 style="font-size: 1.15rem; margin: 1rem 0 0.35rem 0;">Shake Detection SOS</h3>
+            <p style="font-size: 0.88rem;">
+              Firmly shaking your phone 3 times in rapid succession initiates the countdown discreetly with haptic feedback.
+            </p>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="simulatePhoneShake()">
+            Simulate Phone Shake
+          </button>
+        </div>
+
+        <!-- Silent SOS -->
+        <div class="shield-card">
+          <div>
+            <div class="shield-card-header">
+              <div class="shield-icon-frame">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                  <line x1="23" y1="9" x2="17" y2="15"/>
+                  <line x1="17" y1="9" x2="23" y2="15"/>
+                </svg>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggleSilentSos" checked onchange="toggleShieldFeature('silentSosEnabled')">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <h3 style="font-size: 1.15rem; margin: 1rem 0 0.35rem 0;">Silent SOS Trigger</h3>
+            <p style="font-size: 0.88rem;">
+              Triple-pressing the hardware power button sends silent coordinates without alerting potential aggressors.
+            </p>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="triggerSilentSosDemo()">
+            Test Silent Trigger
+          </button>
+        </div>
+
+        <!-- Fake Call De-escalation -->
+        <div class="shield-card" style="border: 2px solid var(--color-coral-red);">
+          <div>
+            <div class="shield-card-header">
+              <div class="shield-icon-frame" style="background: var(--color-coral-red-light); color: var(--color-coral-red);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <span class="badge badge-coral">DE-ESCALATION</span>
+            </div>
+            <h3 style="font-size: 1.15rem; margin: 1rem 0 0.35rem 0;">Fake Call Simulator</h3>
+            <p style="font-size: 0.88rem;">
+              Uncomfortable in an awkward cab or walking past intimidating strangers? Trigger an authentic incoming call with speech to de-escalate safely.
+            </p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="triggerFakeCallModal()">
+            Launch Realistic Fake Call
+          </button>
+        </div>
+      </div>
+
+      <div style="background: var(--color-soft-lavender); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin-top: 2rem; border-left: 4px solid var(--color-soft-purple);">
+        <p style="font-size: 0.85rem; color: var(--color-deep-plum);">
+          <strong>Note on Prototype:</strong> In the upcoming Android release, Active Shield features bind directly to native Android background Foreground Services, hardware key interceptors, and Google On-Device Speech Recognizer.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE 8: EMERGENCY SERVICES
+         ========================================================================== -->
+    <section id="section-emergency" class="app-section">
+      <div class="section-header">
+        <span class="section-eyebrow">Verified Helplines</span>
+        <h2 class="section-title">Emergency Services Directory</h2>
+        <p class="section-desc">
+          Official, verified government emergency helpline integration across India. Instant access when immediate statutory assistance is required.
+        </p>
+      </div>
+
+      <div class="dash-metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="card" style="border-top: 4px solid var(--color-coral-red);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span class="badge badge-coral">ALL-INDIA EMERGENCY</span>
+            <span style="font-size: 1.5rem; font-weight: 900; color: var(--color-coral-red);">112</span>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.35rem;">National Emergency Helpline (112)</h3>
+          <p style="font-size: 0.85rem; margin-bottom: 1rem;">Unified emergency response support for Police, Fire, and Ambulance across all Indian states.</p>
+          <button class="btn btn-primary btn-sm" onclick="showToast('Demo: Dialing National Emergency 112')">Simulate Call 112</button>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--color-soft-purple);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span class="badge badge-purple">WOMEN HELPLINE</span>
+            <span style="font-size: 1.5rem; font-weight: 900; color: var(--color-deep-plum);">1091</span>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Women in Distress (1091)</h3>
+          <p style="font-size: 0.85rem; margin-bottom: 1rem;">24x7 toll-free dedicated police assistance helpline for women experiencing harassment or danger.</p>
+          <button class="btn btn-secondary btn-sm" onclick="showToast('Demo: Dialing Women Helpline 1091')">Simulate Call 1091</button>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--color-deep-plum);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span class="badge badge-plum">DOMESTIC VIOLENCE</span>
+            <span style="font-size: 1.5rem; font-weight: 900; color: var(--color-deep-plum);">181</span>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.35rem;">Women Helpline Scheme (181)</h3>
+          <p style="font-size: 0.85rem; margin-bottom: 1rem;">National crisis response, legal counseling, shelter support, and police coordination.</p>
+          <button class="btn btn-outline btn-sm" onclick="showToast('Demo: Dialing Helpline 181')">Simulate Call 181</button>
+        </div>
+      </div>
+
+      <!-- Safety Protocols Checklist -->
+      <div class="card" style="margin-top: 2rem;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Essential Women's Personal Safety Guidance</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+          <div style="background: var(--color-warm-white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+            <strong style="color: var(--color-deep-plum); font-size: 0.95rem;">Ride-Hailing Verification</strong>
+            <p style="font-size: 0.85rem; margin-top: 0.25rem;">Check vehicle license plate and verify driver photo before entering. Verify child locks are not active in rear doors.</p>
+          </div>
+          <div style="background: var(--color-warm-white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+            <strong style="color: var(--color-deep-plum); font-size: 0.95rem;">Walking Alone at Night</strong>
+            <p style="font-size: 0.85rem; margin-top: 0.25rem;">Keep one headphone ear free. Walk facing oncoming traffic to prevent vehicles approaching unnoticed from behind.</p>
+          </div>
+          <div style="background: var(--color-warm-white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+            <strong style="color: var(--color-deep-plum); font-size: 0.95rem;">De-escalation First</strong>
+            <p style="font-size: 0.85rem; margin-top: 0.25rem;">Use the Fake Call simulator to project that someone is expecting you immediately nearby. Head towards well-lit public shops.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE 9: ACTIVITY HISTORY
+         ========================================================================== -->
+    <section id="section-history" class="app-section">
+      <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="section-eyebrow">Audit & Verification</span>
+          <h2 class="section-title">Activity & Emergency History</h2>
+          <p class="section-desc">Chronological event log tracking check-ins, permission grants, and emergency simulations.</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn btn-outline btn-sm" onclick="filterActivity('all')">All</button>
+          <button class="btn btn-outline btn-sm" onclick="filterActivity('journey')">Journeys</button>
+          <button class="btn btn-outline btn-sm" onclick="filterActivity('contact')">Contacts</button>
+          <button class="btn btn-outline btn-sm" onclick="filterActivity('system')">System</button>
+          <button class="btn btn-secondary btn-sm" onclick="resetToSampleHistory()">Reset Sample</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="timeline-list" id="activityTimelineContainer">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PAGE 10: INNOVATION & MARKET DIFFERENTIATION
+         ========================================================================== -->
+    <section id="section-innovation" class="app-section">
+      <div class="section-header">
+        <span class="section-eyebrow">Round 1 Evaluation</span>
+        <h2 class="section-title">Innovation & Market Differentiation</h2>
+        <p class="section-desc">Why Suraksha Alert is uniquely architected compared to existing safety solutions.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem; color: var(--color-deep-plum);">The Core Problem With Existing Apps</h3>
+        <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 1rem;">
+          There are dozens of SOS panic button apps on the Play Store, yet women in real distress rarely use them. Why? Because when a real threat emerges:
+        </p>
+        <ul style="padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.95rem; color: var(--color-deep-plum-subtle); margin-bottom: 1.5rem;">
+          <li><strong>The Panic Delay:</strong> Victims often have less than 5 seconds. Reaching for a phone, unlocking it, and locating an SOS button is physically prevented by an attacker.</li>
+          <li><strong>The False Sense of Security:</strong> Users assume their phone will save them, but their GPS was turned off, emergency contacts were never verified, or battery was low.</li>
+          <li><strong>Broadcast Chaos:</strong> Blasting an SMS to 5 friends simultaneously creates duplicate panic where everyone assumes someone else is handling the situation.</li>
+        </ul>
+
+        <div style="background: var(--color-soft-lavender); border-radius: var(--radius-md); padding: 1.5rem; border-left: 4px solid var(--color-coral-red);">
+          <h4 style="font-size: 1.15rem; color: var(--color-deep-plum); margin-bottom: 0.5rem;">Suraksha Alert's Architectural Breakthrough</h4>
+          <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-deep-plum);">
+            "Suraksha Alert focuses not only on emergency response, but also on safety preparation before a journey and organised contact escalation when a check-in is missed."
+          </p>
+        </div>
+      </div>
+
+      <div class="dash-metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="card">
+          <div class="feature-icon-badge" style="margin-bottom: 0.75rem;">1</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">1. Pre-Journey Readiness Scoring</h3>
+          <p style="font-size: 0.88rem;">Audits contacts, battery, sensors, and GPS before travel so you never step into danger unprotected.</p>
+        </div>
+
+        <div class="card">
+          <div class="feature-icon-badge" style="margin-bottom: 0.75rem;">2</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">2. Automated Journey Check-ins</h3>
+          <p style="font-size: 0.88rem;">If you are incapacitated, the app alerts contacts automatically when your ETA timer lapses without check-in.</p>
+        </div>
+
+        <div class="card">
+          <div class="feature-icon-badge" style="margin-bottom: 0.75rem;">3</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">3. Acknowledgement Escalation</h3>
+          <p style="font-size: 0.88rem;">Enforces a priority ladder: Contact 1 must acknowledge the emergency or it cascades to Contact 2, 3, and 112.</p>
+        </div>
+
+        <div class="card">
+          <div class="feature-icon-badge" style="margin-bottom: 0.75rem;">4</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">4. Non-Intrusive De-escalation</h3>
+          <p style="font-size: 0.88rem;">A lifelike Fake Call simulator allows women to escape uncomfortable confrontations without escalating aggression.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       MODALS AND OVERLAYS
+       ========================================================================== -->
+
+  <!-- SOS Countdown Emergency Modal -->
+  <div class="sos-overlay" id="sosModal">
+    <div class="sos-dialog">
+      <span class="badge badge-coral" style="font-size: 0.85rem;">CRITICAL DEMO ALERT</span>
+      <h2 style="font-size: 1.75rem; color: var(--color-coral-red); margin-top: 0.5rem;">Emergency SOS Triggered</h2>
+      <p style="font-size: 0.9rem; margin-top: 0.25rem;">
+        Distress siren active. Escalating to Priority 1 Contact (Priya Sharma) in:
+      </p>
+
+      <div class="sos-countdown-circle" id="sosCountdownNumber">5</div>
+
+      <div style="background: var(--color-light-grey); padding: 0.85rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; text-align: left; font-size: 0.825rem;">
+        <div><strong>GPS Location:</strong> 12.9716° N, 77.5946° E (Bengaluru)</div>
+        <div><strong>Battery:</strong> 84% • Live tracking URL generated</div>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; justify-content: center;">
+        <button class="btn btn-outline" onclick="cancelSosCountdown()">
+          Cancel SOS (I am Safe)
+        </button>
+        <button class="btn btn-primary" onclick="proceedImmediateSosDispatch()">
+          Trigger Immediately
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fake Call Phone Screen Simulation -->
+  <div class="fake-call-overlay" id="fakeCallOverlay">
+    <div class="fake-phone-screen">
+      <div>
+        <div style="font-size: 0.85rem; opacity: 0.8; letter-spacing: 0.05em; text-transform: uppercase;">Incoming Call</div>
+        <div class="caller-avatar" id="fakeCallerAvatar">D</div>
+        <div class="caller-name" id="fakeCallerName">Dad</div>
+        <div class="caller-status" id="fakeCallerStatus">Mobile • Ringing...</div>
+      </div>
+
+      <!-- In-Call Voice Simulator Controls (Revealed after accept) -->
+      <div id="inCallSpeechArea" style="display: none; background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: var(--radius-sm); margin: 1rem 0;">
+        <div style="font-size: 0.8rem; color: #a8e6cf; margin-bottom: 0.25rem;">Call Connected • Simulated Audio</div>
+        <div style="font-size: 0.9rem; font-style: italic; color: #fff;" id="callerSpokenText">
+          "Hey sweetie! I'm just around the corner on 100ft road. Waiting for you in the car, see you in 2 minutes!"
+        </div>
+      </div>
+
+      <div class="fake-call-actions">
+        <button class="call-action-btn btn-call-decline" onclick="declineFakeCall()" title="Decline Call">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <button class="call-action-btn btn-call-accept" id="btnAcceptFakeCall" onclick="acceptFakeCall()" title="Accept Call">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add/Edit Contact Modal -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-card">
+      <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;" id="contactModalTitle">Add Trusted Contact</h3>
+      <p style="font-size: 0.85rem; margin-bottom: 1.25rem;">Add a guardian to your emergency acknowledgement ladder.</p>
+
+      <form id="contactForm" onsubmit="handleContactSubmit(event)">
+        <input type="hidden" id="contactEditId" value="">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" id="contactNameInput" required placeholder="e.g. Priya Sharma">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-input" id="contactPhoneInput" required placeholder="e.g. +91 98765 43210">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Relationship</label>
+          <input type="text" class="form-input" id="contactRelationInput" placeholder="e.g. Sister, Mother, Friend">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Escalation Priority</label>
+          <select class="form-select" id="contactPriorityInput">
+            <option value="1">Priority 1 (Contacted First)</option>
+            <option value="2">Priority 2 (Contacted if Priority 1 Unresponsive)</option>
+            <option value="3">Priority 3 (Third-tier Guardian)</option>
+          </select>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1.5rem;">
+          <button type="button" class="btn btn-outline" onclick="closeContactModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Contact</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Judge Guided Demo Floating Bar -->
+  <div class="judge-demo-bar" id="judgeBar">
+    <div class="judge-step-indicator">
+      <span class="badge badge-coral" id="judgeStepNumber">STEP 1/9</span>
+      <span style="font-weight: 700;">JUDGE PRESENTATION TOUR</span>
+    </div>
+    <div class="judge-step-text" id="judgeStepDescription">
+      Start here: The Landing Page introduces Suraksha Alert's core mission and visual branding.
+    </div>
+    <div style="display: flex; gap: 0.5rem; align-items: center;">
+      <button class="demo-nav-btn secondary" onclick="judgeTourPrev()">‹ Prev</button>
+      <button class="demo-nav-btn" onclick="judgeTourNext()">Next Step ›</button>
+      <button style="background: transparent; border:none; color: #fff; cursor: pointer; font-size: 1.1rem; padding: 0 0.4rem;" onclick="dismissJudgeTour()" title="Close Tour">×</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Application Footer -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <div>
+        <div class="brand-titles" style="margin-bottom: 0.75rem;">
+          <span class="brand-title" style="font-size: 1.3rem;">SURAKSHA ALERT</span>
+          <span class="brand-tagline">Your Safety • Your Strength • Your Freedom</span>
+        </div>
+        <p style="font-size: 0.9rem; max-width: 440px;">
+          Empowering women with proactive readiness scoring, automated journey check-ins, and verified emergency escalation. Hackathon Round 1 Web Prototype.
+        </p>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--color-deep-plum);">Quick Navigation</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem;">
+          <li><a href="javascript:void(0)" onclick="navigate('dashboard')">Live Dashboard</a></li>
+          <li><a href="javascript:void(0)" onclick="navigate('readiness')">Safety Readiness Score</a></li>
+          <li><a href="javascript:void(0)" onclick="navigate('journey')">Smart Journey Protection</a></li>
+          <li><a href="javascript:void(0)" onclick="navigate('escalation')">Emergency Escalation Ladder</a></li>
+          <li><a href="javascript:void(0)" onclick="navigate('shield')">Active Shield & Fake Call</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--color-deep-plum);">Demo & Compliance</h4>
+        <p style="font-size: 0.85rem; margin-bottom: 0.75rem;">
+          This web prototype runs in <strong>DEMO MODE</strong>. All emergency triggers, sirens, and contact escalations are simulated locally.
+        </p>
+        <button class="btn btn-outline btn-sm" onclick="resetAllStateToDefault()">Reset Demo Data</button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Suraksha Alert. Built with care for Women's Safety & Empowerment.</span>
+      <span>National Helpline 112 Integrated (Simulation)</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
